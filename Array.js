@@ -12,7 +12,7 @@ function pisahkanGenapGanjil(arr) {
   const genap = [];
   const ganjil = [];
   for (let i = 0; i < arr.length; i++) {
-    if (arr[i] % 2 === 0) {
+    if (i % 2 === 0) {
       genap.push(arr[i]);
     } else {
       ganjil.push(arr[i]);
@@ -72,10 +72,10 @@ const totalGanjil = hitungTotal(ganjil);
 const rataRataGanjil = hitungRataRata(ganjil);
 
 // Perbandingan
-const perbandinganMin = minGenap > minGanjil ? "Min lebih besar array genap" : "Min lebih besar array ganjil";
-const perbandinganMax = maxGenap > maxGanjil ? "Max lebih besar array genap" : "Max lebih besar array ganjil";
-const perbandinganTotal = totalGenap === totalGanjil ? "Total memiliki nilai sama antara array genap dan ganjil" : "Total berbeda antara array genap dan ganjil";
-const perbandinganRataRata = rataRataGenap > rataRataGanjil ? "Rata-rata lebih besar array genap" : "Rata-rata lebih besar array ganjil";
+const perbandinganMin = minGenap > minGanjil ? "Min lebih besar array genap" : minGenap < minGanjil ? "Min lebih besar array ganjil" : "Min sama pada kedua array";
+const perbandinganMax = maxGenap > maxGanjil ? "Max lebih besar array genap" : maxGenap < maxGanjil ? "Max lebih besar array ganjil" : "Max sama pada kedua array";
+const perbandinganTotal = totalGenap > totalGanjil ? "Total lebih besar array genap" : totalGenap < totalGanjil ? "Total lebih besar array ganjil" : "Total sama pada kedua array";
+const perbandinganRataRata = rataRataGenap > rataRataGanjil ? "Rata-rata lebih besar array genap" : rataRataGenap < rataRataGanjil ? "Rata-rata lebih besar array ganjil" : "Rata-rata sama pada kedua array";
 
 console.log("Array dengan jumlah index 100:", arrayRandom);
 console.log("Array genap dengan jumlah index 50:", genap);
